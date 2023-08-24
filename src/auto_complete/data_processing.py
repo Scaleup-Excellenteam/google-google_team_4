@@ -2,7 +2,7 @@ from pathlib import Path
 from trie import Trie
 
 FILE_FORMAT: str = "*.txt"
-DIRECTORY_PATH = Path("Archive")
+DIRECTORY_PATH = Path("../../archive")
 # DIRECTORY_PATH = Path("")
 
 
