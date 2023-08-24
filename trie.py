@@ -19,7 +19,7 @@ class Trie:
         :param sentence_id: str a unique id for each sentence
         :return: None
         """
-        words = re.sub(r'[^\w\s]+', '', sentence).lower().split()  # remove punctuation marks
+        words = remove_punctuation_marks(sentence).split()
         for i in range(len(words)):
             node = self.root
             sliced_phrase = " ".join(words[i:])
@@ -40,7 +40,9 @@ class Trie:
         """
 
         # find the node that represents the prefix
+
         node = self.root
+        prefix = remove_punctuation_marks(prefix)
         for char in prefix:
             if not node.children.get(char):
                 return []
@@ -56,3 +58,11 @@ class Trie:
             node_stack.extend((child, current_key + char) for char, child in node.children.items())
 
         return nodes
+
+def remove_punctuation_marks(sentence: str) -> str:
+    """
+    Removes punctuation marks from a sentence
+    :param sentence: str input sentence from the user
+    :return: str sentence without punctuation marks
+    """
+    return re.sub(r'[^\w\s]+', '', sentence).lower()
