@@ -5,7 +5,7 @@ This project involves the implementation of an Autocomplete system for sentences
 
 - **Trie Data Structure**: The data structure used in this project is a Trie. It's a tree-like structure where each node represents a character in a word. The Trie is constructed by inserting individual words from sentences. Each node contains children nodes for the next characters, and a flag to indicate the end of a sentence. 
 
-## Detailed Code Flow
+## Detailed Code Flow 
 
 The project follows these key steps:
 - **TrieNode Class**: Defines the nodes of the Trie. Each node holds references to its children characters, a flag indicating the end of a sentence, and a sentence ID for reference.
